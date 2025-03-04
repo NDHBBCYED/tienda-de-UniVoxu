@@ -1,0 +1,147 @@
+.publish-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .back-link {
+    margin-bottom: 1.5rem;
+  }
+  
+  .back-link a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--transition);
+  }
+  
+  .back-link a:hover {
+    color: var(--primary-color);
+  }
+  
+  .publish-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .card-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-header p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .publish-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: var(--transition);
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-color);
+  }
+  
+  .form-hint {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+  }
+  
+  .image-upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .image-upload-area:hover {
+    border-color: var(--primary-color);
+  }
+  
+  .image-upload-area i {
+    font-size: 2rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .image-upload-area p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .image-upload-area span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  
+  .submit-btn {
+    margin-top: 1rem;
+  }
+  
+  

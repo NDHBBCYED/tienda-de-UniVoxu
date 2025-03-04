@@ -1,0 +1,249 @@
+/* Base styles and CSS reset */
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --text-light: #6c757d;
+  --border-color: #dee2e6;
+  --background-color: #fff;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --max-width: 1200px;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Common utility classes */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:active::after {
+  opacity: 1;
+  transform: scale(50, 50) translate(-50%, -50%);
+  transition: transform 0.5s, opacity 1s;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Icon font placeholders - in a real project, you would use a proper icon font or SVG icons */
+[class^="icon-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.icon-shopping-bag:before {
+  content: "🛍️";
+}
+
+.icon-search:before {
+  content: "🔍";
+}
+
+.icon-plus:before {
+  content: "➕";
+}
+
+.icon-arrow-left:before {
+  content: "⬅️";
+}
+
+.icon-building:before {
+  content: "🏢";
+}
+
+.icon-calendar:before {
+  content: "📅";
+}
+
+.icon-share:before {
+  content: "🔗";
+}
+
+.icon-user:before {
+  content: "👤";
+}
+
+.icon-star:before {
+  content: "☆";
+}
+
+.icon-star.filled:before {
+  content: "⭐";
+}
+
+.icon-message:before {
+  content: "💬";
+}
+
+.icon-upload:before {
+  content: "📤";
+}
+
+.icon-book:before {
+  content: "📚";
+}
+
+.icon-laptop:before {
+  content: "💻";
+}
+
+.icon-bicycle:before {
+  content: "🚲";
+}
+
+.icon-shirt:before {
+  content: "👕";
+}
+
+.icon-coffee:before {
+  content: "☕";
+}
+
+.hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive grid system */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mejorar la accesibilidad */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Añadir clase de utilidad para espaciado */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Mejorar la accesibilidad para usuarios de teclado */
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.5);
+}
+
+/* Añadir indicadores visuales para estados de interacción */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+

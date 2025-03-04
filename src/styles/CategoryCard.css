@@ -1,0 +1,73 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease-in-out; /* Mejorar la transición al seleccionar */
+  cursor: pointer;
+}
+
+.category-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+.category-card.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(67, 97, 238, 0.05);
+  box-shadow: var(--box-shadow);
+}
+
+.category-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary-color);
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
+}
+
+.category-card.selected .category-icon {
+  background-color: rgba(67, 97, 238, 0.2);
+}
+
+.category-icon i {
+  font-size: 1.5rem;
+  margin-right: 0;
+}
+
+.category-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--text-color); /* Mejorar el contraste para mejor legibilidad */
+}
+
+.category-count {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Mejorar la accesibilidad para navegación por teclado */
+.category-card:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Añadir indicador visual para interacción con teclado */
+.category-card:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Añadir efecto de pulsación al hacer clic */
+.category-card:active {
+  transform: scale(0.98);
+}
+
