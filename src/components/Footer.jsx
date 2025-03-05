@@ -2,16 +2,21 @@ import { Link } from "react-router-dom"
 import "../styles/Footer.css"
 
 function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
           <div className="footer-column">
             <div className="footer-logo">
-              <i className="icon-shopping-bag"></i>
-              <span>UniVoxu</span>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/univoux-Mesa%20de%20trabajo%201-pQjI9srBnVL5VfYiPI9nHODgae8d6Y.png"
+                alt="UniVoxu"
+                className="footer-logo-image"
+              />
+              <p>La plataforma de compra y venta para estudiantes universitarios.</p>
             </div>
-            <p>La plataforma de compra y venta para estudiantes universitarios.</p>
           </div>
 
           <div className="footer-column">
@@ -64,7 +69,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} UniVoxu. Todos los derechos reservados.</p>
+          <p>© {currentYear} UniVoxu. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
