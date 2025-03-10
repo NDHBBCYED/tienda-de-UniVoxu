@@ -212,6 +212,10 @@ textarea {
   content: "☕";
 }
 
+.icon-all:before {
+  content: "🏠";
+}
+
 .hidden-input {
   position: absolute;
   width: 1px;

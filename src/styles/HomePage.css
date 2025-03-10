@@ -13,7 +13,7 @@
 
 /* Hero section */
 .hero-section {
-  background: linear-gradient(to right, rgba(67, 97, 238, 0.1), rgba(67, 97, 238, 0.05));
+  background: linear-gradient(to right, rgba(55, 48, 163, 0.1), rgba(32, 178, 170, 0.1));
   border-radius: var(--border-radius);
   padding: 3rem 2rem;
   margin-bottom: 3rem;
@@ -93,14 +93,14 @@
 
 .category-card.selected {
   border-color: var(--primary-color);
-  background-color: rgba(67, 97, 238, 0.05);
-  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+  background-color: rgba(55, 48, 163, 0.05);
+  box-shadow: 0 0 0 2px rgba(55, 48, 163, 0.2);
   transform: translateY(-2px);
 }
 
 /* Products grid */
 .products-section {
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 120px; /* Ajustar para que no quede debajo del header y la barra de categorías */
 }
 
 .products-grid {
@@ -158,6 +158,10 @@
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+
+  .products-section {
+    scroll-margin-top: 100px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -197,8 +201,8 @@ a:focus,
 /* Mejorar el estilo del botón secundario */
 .secondary-btn {
   background-color: var(--secondary-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
+  color: white;
+  border: none;
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   font-weight: 500;
@@ -207,9 +211,6 @@ a:focus,
 }
 
 .secondary-btn:hover {
-  background-color: #e9ecef;
+  background-color: var(--secondary-hover);
 }
 
-
-  
-  

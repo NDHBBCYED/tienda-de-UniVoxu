@@ -1,11 +1,12 @@
 "use client"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import "../styles/Header.css"
 
-function Header() {
+function Header({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("")
+  const navigate = useNavigate()
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value)
@@ -13,14 +14,28 @@ function Header() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
-    // En una aplicación real, aquí redirigimos a la página de resultados de búsqueda
-    console.log("Búsqueda:", searchQuery)
+
+    // Si hay una función onSearch proporcionada, la llamamos con el término de búsqueda
+    if (onSearch) {
+      onSearch(searchQuery)
+
+      // Navegar a la página principal con el parámetro de búsqueda
+      navigate(`/?search=${encodeURIComponent(searchQuery)}`)
+    }
+  }
+
+  const handleClearSearch = () => {
+    setSearchQuery("")
+    if (onSearch) {
+      onSearch("")
+      navigate("/")
+    }
   }
 
   return (
     <header className="header">
       <div className="header-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={() => onSearch && onSearch("")}>
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/univoux-Mesa%20de%20trabajo%201-pQjI9srBnVL5VfYiPI9nHODgae8d6Y.png"
             alt="UniVoxu - Donde los universitarios tienen voz"
@@ -37,6 +52,14 @@ function Header() {
             onChange={handleSearchChange}
             aria-label="Buscar productos"
           />
+          {searchQuery && (
+            <button type="button" className="clear-search" onClick={handleClearSearch} aria-label="Limpiar búsqueda">
+              ✕
+            </button>
+          )}
+          <button type="submit" className="search-button" aria-label="Buscar">
+            Buscar
+          </button>
         </form>
 
         <div className="header-actions">
@@ -51,6 +74,4 @@ function Header() {
 }
 
 export default Header
-
-
 

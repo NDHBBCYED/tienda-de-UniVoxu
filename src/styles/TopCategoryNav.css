@@ -1,0 +1,104 @@
+.top-category-nav {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 60px; /* Ajustar según la altura del header */
+    z-index: 90;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .top-category-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-behavior: smooth;
+    gap: 1rem;
+  }
+  
+  .top-category-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    padding: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    position: relative;
+  }
+  
+  .category-item:hover {
+    background-color: rgba(55, 48, 163, 0.05);
+  }
+  
+  .category-item.active {
+    color: var(--primary-color);
+  }
+  
+  .category-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+  }
+  
+  .category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(55, 48, 163, 0.1);
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+  }
+  
+  .category-item.active .category-icon {
+    background-color: rgba(55, 48, 163, 0.2);
+  }
+  
+  .category-item span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  /* Añadir icono para "Todos" */
+  .icon-all:before {
+    content: "🏠";
+  }
+  
+  @media (max-width: 768px) {
+    .top-category-nav {
+      top: 50px; /* Ajustar para header más pequeño en móvil */
+    }
+  
+    .category-icon {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .category-item {
+      min-width: 70px;
+      padding: 0.25rem;
+    }
+  }
+  
+  
